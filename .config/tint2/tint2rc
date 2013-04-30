@@ -1,0 +1,152 @@
+#---------------------------------------------
+# TINT2 CONFIG FILE
+#---------------------------------------------
+
+#---------------------------------------------
+# BACKGROUND AND BORDER
+#---------------------------------------------
+
+# launcher, task, battery
+rounded = 2
+border_width = 1
+background_color = #000000 65
+#background_color = #000000 35
+#border_color = #3d352a 60
+border_color = #666666 70
+
+# task_active_background, clock, systray
+rounded = 2
+border_width = 1
+background_color = #000000 25
+border_color = #888888 60
+
+# systray
+rounded = 2
+border_width = 1
+background_color = #cccccc 65
+border_color = #888888 60
+
+#---------------------------------------------
+# PANEL
+#---------------------------------------------
+
+panel_items = LTS
+panel_monitor = all
+panel_position = top left horizontal
+panel_size = 76% 19
+panel_margin = -1 -1
+panel_padding = 0 0
+font_shadow = 0
+panel_background_id = 0
+wm_menu = 1
+panel_dock = 0
+panel_layer = bottom
+
+#------------------------------------------
+#LAUNCHER
+#------------------------------------------
+
+launcher_icon_theme = Faenza
+launcher_padding = 5 2 5
+launcher_background_id = 0
+launcher_icon_size = 24
+launcher_item_app = /usr/share/applications/firefox-bin.desktop
+launcher_item_app = /usr/share/applications/kde4/kate.desktop
+launcher_item_app = /usr/share/applications/libreoffice-startcenter.desktop
+launcher_item_app = /usr/share/applications/kde4/korganizer.desktop
+launcher_item_app = /usr/share/applications/kde4/Kontact.desktop
+launcher_item_app = /usr/share/applications/kde4/dolphin.desktop
+launcher_item_app = /usr/share/applications/eclipse-3.5-eclipse-sdk-3.5.desktop
+launcher_item_app = /usr/share/applications/kde4/konsole.desktop
+launcher_item_app = /usr/share/applications/qtcreator-qt-creator.desktop
+#launcher_item_app = /usr/share/applications/nightingale.desktop
+launcher_item_app = /usr/share/applications/clementine.desktop
+launcher_item_app = /usr/share/applications/GuitarPro6.desktop
+
+#---------------------------------------------
+# TASKBAR
+#---------------------------------------------
+
+taskbar_mode = single_monitor
+taskbar_padding = 1 1 1
+taskbar_background_id = 0
+
+#---------------------------------------------
+# TASK
+#---------------------------------------------
+
+urgent_nb_of_blink = 3
+task_icon = 0
+task_text = 1
+task_centered = 1
+task_maximum_size = 0
+task_padding = 3 2
+task_font = Sans 9
+#task_font = Linux Biolinum Capitals 11
+task_font_color = #d7d3c5 85
+task_icon_asb = 100 -10 0
+task_background_id = 1
+task_active_font_color = #ffffff 100
+task_active_background_id = 2
+task_active_icon_asb = 100 0 0
+task_tooltip = 1
+
+#---------------------------------------------
+# SYSTRAY
+#---------------------------------------------
+
+systray = 1
+systray_padding = 1 1 1
+systray_background_id = 3
+systray_sort = right2left
+systray_icon_size = 24
+systray_icon_asb = 100 0 10
+
+#---------------------------------------------
+# BATTERY
+#---------------------------------------------
+
+battery = 1
+battery_low_status = 15
+battery_low_cmd = notify-send "battery low"
+bat1_font = sans 8
+bat2_font = sans 6
+battery_font_color = #ffffff 76
+battery_padding = 1 0
+battery_background_id = 1
+
+#---------------------------------------------
+# CLOCK
+#---------------------------------------------
+
+time1_format = %A, %C%g.%b.%d. %H:%M
+time1_font = Sans 9
+#time1_font = Linux Biolinum Capitals Bold 10
+#time2_format = %A, %C%g.%b.%d.
+#time2_font = Sans 7
+clock_font_color = #eeeeee 100
+clock_padding = 10 0
+clock_background_id = 2
+clock_rclick_command = gsimplecal 
+
+#---------------------------------------------
+# TOOLTIP
+#---------------------------------------------
+
+tooltip = 0
+tooltip_padding = 0 0
+tooltip_show_timeout = 0
+tooltip_hide_timeout = 0
+tooltip_background_id = 0
+tooltip_font = Sans 12
+tooltip_font_color = #FFFFFF 100
+
+#---------------------------------------------
+# MOUSE ACTION ON TASK
+#---------------------------------------------
+
+mouse_middle = close
+mouse_right = none
+mouse_scroll_up = toggle
+mouse_scroll_down = iconify
+
