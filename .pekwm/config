@@ -1,0 +1,110 @@
+Files {
+    Keys = "~/.pekwm/keys"
+    Mouse = "~/.pekwm/mouse"
+    Menu = "~/.pekwm/menu"
+    Start = "~/.pekwm/start"
+    AutoProps = "~/.pekwm/autoproperties"
+    Theme = "~/.pekwm/themes/Zukitwo_Dark_PekWM"
+    Icons = "~/.pekwm/icons/"
+}
+
+MoveResize {
+    EdgeAttract = "4"
+    EdgeResist = "4"
+    WindowAttract = "4"
+    WindowResist = "4"
+    OpaqueMove = "True"
+    OpaqueResize = "True"
+}
+
+Screen {
+    Workspaces = "1"
+    WorkspacesPerRow = "3"
+    WorkspaceNames = "Main;Web;E-mail;Music;Work 05;Work 06;Work 07;Work 08;Work 09"
+    ShowFrameList = "True"
+    ShowStatusWindow = "True"
+    ShowStatusWindowCenteredOnRoot = "False"
+    ShowClientID = "False"
+    ShowWorkspaceIndicator = "1000"
+    WorkspaceIndicatorOpacity = "40"
+    PlaceNew = "True"
+    FocusNew = "True"
+
+    TrimTitle = "..."
+    FullscreenAbove = "True"
+    FullscreenDetect = "True"
+    HonourRandr = "True"
+    HonourAspectRatio = "True"
+    EdgeSize = "0 0 0 0"
+    EdgeIndent = "True"
+    PixmapCacheSize = "20"
+    DoubleClickTime = "250"
+
+    Placement {
+        Model = "CenteredOnParent Smart MouseNotUnder"
+        Smart {
+            Row = "True"
+            TopToBottom = "True"
+            LeftToRight = "True"
+            OffsetX = "0"
+            OffsetY = "0"
+        }
+    }
+
+    UniqueNames  {
+        SetUnique = "False"
+        Pre = " #"
+        Post = ""
+    }
+}
+
+Menu {
+    FocusOpacity = "65"
+  UnfocusOpacity = "65"
+    DisplayIcons = "True"
+
+    Icons = "DEFAULT" {
+        Minimum = "16x16"
+        Maximum = "16x16"
+    }
+
+    # To enable make separate window have other icon size restrictions,
+    # for example wallpaper menu found in pekwm_menu_tools, set the following
+    # for each menu you want to "free".
+
+    # Icons = "Wallpaper" {
+    #     Minimum = "64x64"
+    #     Maximum = "64x64"
+    # }
+
+    # Defines how menus act on mouse input.
+    # Possible values are: "ButtonPress ButtonRelease DoubleClick Motion"
+    # To make submenus open on mouse over, comment the default Enter,
+    # uncomment the alternative, and reload pekwm.
+    
+    Select = "Motion MotionPressed"
+    Enter = "MotionPressed ButtonPress"
+    # Enter = "Motion"
+    Exec = "ButtonRelease"
+}
+
+CmdDialog {
+    HistoryUnique = "True"
+    HistorySize = "1024"
+    HistoryFile = "~/.pekwm/history"
+    HistorySaveInterval = "16"
+}
+
+Harbour {
+    Opacity = "60"
+    OnTop = "True"
+    MaximizeOver = "False"
+    Placement = "Right"
+    Orientation = "TopToBottom"
+    Head = "0"
+
+    DockApp {
+        SideMin = "64"
+        SideMax = "0"
+    }
+}
