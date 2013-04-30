@@ -1,0 +1,157 @@
+# Menu config for pekwm
+
+# Variables
+$TERM = "xterm -fn fixed +sb -bg black -fg white"
+
+RootMenu = "Pekwm" {
+  Entry = "Konsole" { Actions = "Exec konsole &" }
+	Entry = "Firefox" { Actions = "Exec firefox-bin &" }
+	Entry = "Run.." { Actions = "Exec gmrun" }
+
+	Separator {}
+
+	Submenu = "Development" {
+		Submenu = "Qt tools" {
+			Entry = "Qt Creator" { Actions = "Exec qtcreator &" }
+			Entry = "Qt Asistant" { Actions = "Exec assistant &" }
+			Entry = "Qt Designer" { Actions = "Exec designer &" }
+			Entry = "Qt Linguist" { Actions = "Exec linguist &" }
+		}
+		Entry = "Anjuta" { Actions = "Exec anjuta &" }
+		Entry = "Eclipse" { Actions = "Exec eclipse-3.5 &" }
+		Entry = "KDevelop" { Actions = "Exec kdevelop &" }
+		Entry = "Matlab" { Actions = "Exec $TERM -e sh /home/marietta/tiger/MATLAB-R2011a/bin/matlab &" }
+	}
+	Submenu = "Editors" {
+		Entry = "gedit" { Actions = "Exec gedit &" }
+		Entry = "gvim" { Actions = "Exec gvim &" }
+		Entry = "Kate" { Actions = "Exec kate &" }
+		Entry = "Kwrite" { Actions = "Exec kwrite &" }
+		Entry = "vi" { Actions = "Exec $TERM -title vi -e vi &" }
+	}
+	Submenu = "Graphics" {
+		Entry = "display" { Actions = "Exec display &" }
+		Entry = "gcolor2" { Actions = "Exec gcolor2 &" }
+		Entry = "Gimp" { Actions = "Exec gimp &" }
+		Entry = "nitrogen" { Actions = "Exec nitrogen &" }
+	}
+	Submenu = "Multimedia" {
+		Entry = "alsamixer" { Actions = "Exec $TERM -title alsamixer -e alsamixer &" }
+		Entry = "Cantata" { Actions = "Exec cantata &" }
+		Entry = "Clementine" { Actions = "Exec clementine &" }
+		Entry = "gtkpod" { Actions = "Exec gtkpod &" }
+		Entry = "Guitar Pro 6" { Actions = "Exec /opt/GuitarPro6/gp-launcher.sh &" }
+		Entry = "MPD client" { Actions = "Exec $TERM -title mpdclient -e ncmpcpp &" }
+		Entry = "pavucontrol" { Actions = "Exec pavucontrol &" }
+		Entry = "Qjackctl" { Actions = "Exec qjackctl &" }
+		Entry = "SMPlayer" { Actions = "Exec smplayer &" }
+		Entry = "VLC" { Actions = "Exec vlc &" }
+	}
+	Submenu = "Network" {
+		Entry = "Firefox" { Actions = "Exec firefox &" }
+		Entry = "kadu" { Actions = "Exec kadu &" }
+		Entry = "Konqueror" { Actions = "Exec konqueror &" }
+		Entry = "Transmission" { Actions = "Exec transmission-qt &" }
+		Entry = "wicd-client" { Actions = "Exec wicd-client &" }
+	}
+	Submenu = "Office" {
+		Entry = "LibreOffice" { Actions = "Exec lofromtemplate &" }
+		Entry = "Base" { Actions = "Exec lobase &" }
+		Entry = "Calc" { Actions = "Exec localc &" }
+		Entry = "Draw" { Actions = "Exec lodraw &" }
+		Entry = "Impress" { Actions = "Exec loimpress &" }
+		Entry = "Math" { Actions = "Exec lomath &" }
+		Entry = "Writer" { Actions = "Exec lowriter &" }
+		Entry = "Web" { Actions = "Exec loweb &" }
+	}
+	Submenu = "Utils" {
+		Entry = "Dolphin" { Actions = "Exec dolphin &" }
+		Entry = "PCManFM" { Actions = "Exec pcmanfm &" }
+	}
+	Submenu = "Settings" {
+		Submenu = "Config" {
+			Entry = "conkyrc" { Actions = "Exec kate /home/marietta/.conky/conkyrc" }
+			Entry = "tint2" { Actions = "Exec kate /home/marietta/.config/tint2/tint2rc" }
+		}
+		Entry = "gtk-chtheme" { Actions = "Exec gtk-chtheme &" }
+		Entry = "Gnome settings" { Actions = "Exec gnome-control-center &" }
+		Entry = "KDE settings" { Actions = "Exec systemsettings &" }
+		Entry = "LXappearance" { Actions = "Exec lxappearance &" }
+	}
+
+	Separator {}
+
+	Submenu = "Go to" {
+		SubMenu = "Workspace" {
+			# Create goto menu once per pekwm config reload. The fast way that
+			# will work for most if not all users.
+			COMMAND = "/usr/share/pekwm/scripts/pekwm_ws_menu.sh goto"
+			# Create goto menu every time the menu is opened. The slow way.
+			# This is what you want if you are using external tools to make
+			# the amount of workspaces something else than what you define in
+			# ~/.pekwm/config. You will know if you want this.
+			# Entry = "" { Actions = "Dynamic /usr/share/pekwm/scripts/pekwm_ws_menu.sh goto dynamic" }
+		}
+		Entry = "Window.." { Actions = "ShowMenu GotoClient True" }
+	}
+	Submenu = "Pekwm" {
+		Submenu = "Themes" {
+			Entry { Actions = "Dynamic /usr/share/pekwm/scripts/pekwm_themeset.sh /usr/share/pekwm/themes" }
+			Entry { Actions = "Dynamic /usr/share/pekwm/scripts/pekwm_themeset.sh ~/.pekwm/themes" }
+		}
+		Entry = "Reload" { Actions = "Reload" }
+		Entry = "Restart" { Actions = "Restart" }
+		Entry = "Exit" { Actions = "Exit" }
+#		Submenu = "Exit to" {
+#			Entry = "Xterm" { Actions = "RestartOther xterm" }
+#			Entry = "TWM" { Actions = "RestartOther twm" }
+		}
+	}
+}
+
+WindowMenu = "Window Menu" {
+	Entry = "(Un)Stick" { Actions = "Toggle Sticky" }
+	Entry = "(Un)Shade" { Actions = "Toggle Shaded" }
+	Entry = "Iconify" { Actions = "Set Iconified" }
+	Entry = "Command.." { Actions = "ShowCmdDialog" }
+
+	Submenu = "Maximize" {
+		Entry = "Toggle Full" { Actions = "Toggle Maximized True True" }
+		Entry = "Toggle Horizontal" { Actions = "Toggle Maximized True False" }
+		Entry = "Toggle Vertical" { Actions = "Toggle Maximized False True" }
+	}
+	Submenu = "Fill" {
+		Entry = "Full" { Actions = "MaxFill True True" }
+		Entry = "Horizontal" { Actions = "MaxFill True False" }
+		Entry = "Vertical" { Actions = "MaxFill False True" }
+	}
+	Submenu = "Stacking" {
+		Entry = "Raise" { Actions = "Raise" }
+		Entry = "Lower" { Actions = "Lower" }
+		Entry = "Toggle Always On Top" { Actions = "Toggle AlwaysOnTop" }
+		Entry = "Toggle Always Below" { Actions = "Toggle AlwaysBelow" }
+	}
+	Submenu = "Decorations" {
+		Entry = "Toggle Decorations" { Actions = "Toggle DecorBorder; Toggle DecorTitlebar" }
+		Entry = "Toggle Borders" { Actions = "Toggle DecorBorder" }
+		Entry = "Toggle Titlebar" { Actions = "Toggle DecorTitlebar" }
+	}
+	Submenu = "Skip" {
+		Entry = "Toggle showing this frame in menus" { Actions = "Toggle Skip Menus" }
+		Entry = "Toggle including this frame in focus toggle" { Actions = "Toggle Skip FocusToggle" }
+		Entry = "Toggle if this frame snaps to other windows" { Actions = "Toggle Skip Snap" }
+	}
+	SubMenu = "Send To" {
+		# Create sendto menu once per pekwm config reload. The fast way that
+		# will work for most if not all users.
+		COMMAND = "/usr/share/pekwm/scripts/pekwm_ws_menu.sh send"
+		# Create sendto menu every time the menu is opened. The slow way.
+		# This is what you want if you are using external tools to make
+		# the amount of workspaces something else than what you define in
+		# ~/.pekwm/config. You will know if you want this.
+		# Entry = "" { Actions = "Dynamic /usr/share/pekwm/scripts/pekwm_ws_menu.sh send dynamic" }
+	}
+	Separator {}
+	Entry = "Close" { Actions = "Close" }
+	Submenu = "Kill" { Entry = "Kill application" { Actions = "Kill" } }
+}
