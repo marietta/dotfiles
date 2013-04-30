@@ -1,0 +1,8 @@
+#!/bin/sh
+killall pulseaudio
+killall jackd
+
+rm /home/marietta/.asoundrc
+
+amixer set Master unmute
+amixer -c 0 sset Surround,0 unmute 100%
