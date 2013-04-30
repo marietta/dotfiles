@@ -1,4 +1,4 @@
 dotfiles
 ========
 
-My home, settings and scripts
+My home, configs and scripts
