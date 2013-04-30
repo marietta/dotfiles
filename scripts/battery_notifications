@@ -1,0 +1,23 @@
+#!/bin/bash
+
+ON_BATTERY=0;
+
+while :
+do
+
+    AC_STATE=$(acpi -a | awk '{print $2}' | sed "s/://");
+
+	if [ "$AC_STATE" -eq "$ON_BATTERY" ]; then
+		BATTERY_PERCENT=$(acpi -b | awk '{print $4}' | sed "s/,//");
+		REMAINING_TIME=$(acpi -b | awk '{print $5}');
+		CURRENT_PERCENT=$(echo $BATTERY_PERCENT | sed "s/%//");
+
+		if [ "$CURRENT_PERCENT" -lt 30 ]; then 
+			notify-send "Warning: Low Battery" "Remaining time: $REMAINING_TIME" ;
+		fi;
+
+	fi;
+
+	sleep 300;
+
+done
