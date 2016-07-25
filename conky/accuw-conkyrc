@@ -1,0 +1,71 @@
+#avoid flicker
+double_buffer yes
+
+background yes
+
+#own window to run simultanious 2 or more conkys
+own_window  yes
+own_window_transparent yes
+own_window_argb_visual no
+own_window_type desktop
+#own_window_class conky
+own_window_hints undecorated,below,sticky,skip_taskbar,skip_pager 
+#own_window_title conkyweather
+
+#borders
+draw_borders no
+#shades
+draw_shades no
+
+#position
+gap_x 5
+gap_y 0
+
+alignment top_right
+
+#behaviour
+update_interval 1
+
+temperature_unit celsius
+
+#-----------------------------
+
+#color
+#default_color  9f907d #orig
+#default_color 482F44
+default_color eeeeee
+#default_color 000000
+#default_color 0B1943
+#default_color d7d3c5
+
+#default_shade_color 000000
+
+#own_window_colour 3d352a #orig
+#own_window_colour 9f907d
+
+#color1 2E4531
+#color1 482F44
+#color1 d7d3c5
+#color1 112530
+color1 dddddd
+color2 8f8f8f
+
+#-----------------------------
+
+#font
+use_xft yes
+override_utf8_locale yes
+#xftfont bauhaus:pixelsize=11
+#xftfont Trebuchet MS:pixelsize=20
+xftfont DejaVu Sans Book:pixelsize=13:style=normal
+
+#to prevent window from moving
+use_spacer none
+minimum_size 300 15
+maximum_width 1000
+
+#lua_load ~/.conky/draw_bg.lua
+#lua_draw_hook_pre draw_bg
+
+TEXT
+${alignr}${offset 5} ${voffset -2}${font sans:size=7}${texeci 55 python $HOME/.conky/torn.py} ${voffset -3}  ${font conkyweather:size=13:bold}${execi 900 sed -n '2p' $HOME/.conky/accuweather_script/curr_cond} ${voffset -5} ${font}${execpi 900 sed -n '4p' $HOME/.conky/accuweather_script/curr_cond}°C  ${time %b. %d.  %A  %H:%M } 
