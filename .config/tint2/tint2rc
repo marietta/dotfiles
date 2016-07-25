@@ -6,25 +6,35 @@
 # BACKGROUND AND BORDER
 #---------------------------------------------
 
-# launcher, task, battery
-rounded = 2
-border_width = 1
-background_color = #000000 65
-#background_color = #000000 35
-#border_color = #3d352a 60
-border_color = #666666 70
-
-# task_active_background, clock, systray
+#1 launcher, task, battery
 rounded = 2
 border_width = 1
 background_color = #000000 25
-border_color = #888888 60
+#background_color = #000000 35
+#border_color = #3d352a 60
+border_color = #000000 70
 
-# systray
+#2 task_active_background
+rounded = 1
+border_width = 1
+#background_color = #bbbbbb 35
+#background_color = #D4C9E9 35
+background_color = #000000 75
+border_color = #bbbbbb 35
+#border_color = #888888 60
+
+#3 systray
 rounded = 2
 border_width = 1
-background_color = #cccccc 65
+#background_color = #e3e3e3 65
+background_color = #D4C9E9 60
 border_color = #888888 60
+
+#4 task backgound
+rounded = 0
+border_width = 1
+background_color = #101010 55
+border_color = #5e5e5e 90
 
 #---------------------------------------------
 # PANEL
@@ -33,7 +43,7 @@ border_color = #888888 60
 panel_items = LTS
 panel_monitor = all
 panel_position = top left horizontal
-panel_size = 76% 19
+panel_size = 73% 19
 panel_margin = -1 -1
 panel_padding = 0 0
 font_shadow = 0
@@ -41,6 +51,9 @@ panel_background_id = 0
 wm_menu = 1
 panel_dock = 0
 panel_layer = bottom
+mouse_effects = 1
+mouse_hover_icon_asb = 100 0 2
+mouse_pressed_icon_asb = 90 0 -10
 
 #------------------------------------------
 #LAUNCHER
@@ -50,18 +63,24 @@ launcher_icon_theme = Faenza
 launcher_padding = 5 2 5
 launcher_background_id = 0
 launcher_icon_size = 24
+startup_notifications = 1
+launcher_tooltip = 0
 launcher_item_app = /usr/share/applications/firefox-bin.desktop
-launcher_item_app = /usr/share/applications/kde4/kate.desktop
+launcher_item_app = /usr/local/share/applications/mozilla-light.desktop
+launcher_item_app = /usr/share/applications/org.kde.kate.desktop
 launcher_item_app = /usr/share/applications/libreoffice-startcenter.desktop
-launcher_item_app = /usr/share/applications/kde4/korganizer.desktop
-launcher_item_app = /usr/share/applications/kde4/Kontact.desktop
-launcher_item_app = /usr/share/applications/kde4/dolphin.desktop
-launcher_item_app = /usr/share/applications/eclipse-3.5-eclipse-sdk-3.5.desktop
-launcher_item_app = /usr/share/applications/kde4/konsole.desktop
+#launcher_item_app = /usr/share/applications/kde4/korganizer.desktop
+#launcher_item_app = /usr/share/applications/kde4/Kontact.desktop
+launcher_item_app = /usr/share/applications/org.kde.dolphin.desktop
+#launcher_item_app = /home/marietta/.local/share/applications/urxvt.desktop
+#launcher_item_app = /usr/share/applications/eclipse-3.5-eclipse-sdk-3.5.desktop
+launcher_item_app = /usr/share/applications/org.kde.konsole.desktop
 launcher_item_app = /usr/share/applications/qtcreator-qt-creator.desktop
 #launcher_item_app = /usr/share/applications/nightingale.desktop
-launcher_item_app = /usr/share/applications/clementine.desktop
+#launcher_item_app = /usr/share/applications/clementine.desktop
+#launcher_item_app = /usr/share/applications/vuze.desktop
 launcher_item_app = /usr/share/applications/GuitarPro6.desktop
+launcher_item_app = /usr/share/applications/krita.desktop
 
 #---------------------------------------------
 # TASKBAR
@@ -81,12 +100,14 @@ task_text = 1
 task_centered = 1
 task_maximum_size = 0
 task_padding = 3 2
-task_font = Sans 9
+#task_font = Sans 9
 #task_font = Linux Biolinum Capitals 11
-task_font_color = #d7d3c5 85
+task_font = DejaVu Sans Book 9
+#task_font = PT Sans Regular 9
+task_font_color = #d7d3c5 80
 task_icon_asb = 100 -10 0
-task_background_id = 1
-task_active_font_color = #ffffff 100
+task_background_id = 4
+task_active_font_color = #eeeeee 100
 task_active_background_id = 2
 task_active_icon_asb = 100 0 0
 task_tooltip = 1
@@ -97,7 +118,8 @@ task_tooltip = 1
 
 systray = 1
 systray_padding = 1 1 1
-systray_background_id = 3
+#systray_background_id = 3
+systray_background_id = 4
 systray_sort = right2left
 systray_icon_size = 24
 systray_icon_asb = 100 0 10
