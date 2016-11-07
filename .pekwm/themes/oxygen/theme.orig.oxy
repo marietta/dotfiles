@@ -3,22 +3,22 @@
 #  Date: 06.05.08
 
 $font = "XFT#Sans:size=9#Left"
-$font_title = "XFT#Sans:size=8#Center"
+$font_title = "XFT#Sans:size=9#Center"
 
 PDecor {
 	Decor = "Default" {
 		Title {
-			Height = "22"
+			Height = "24"
 			Pad = "5 5 5 5"
 
 			Focused = "Image title.png"
 			Unfocused = "Image title.png"
 
 			Tab {
-				Focused = "Image title.png#scaled"
-				FocusedSelected = "Image title.png#scaled"
-				Unfocused = "Image title.png#scaled"
-				UnfocusedSelected = "Image title.png#scaled"
+				Focused = "Image title.png"
+				FocusedSelected = "Image title.png"
+				Unfocused = "Image title.png"
+				UnfocusedSelected = "Image title.png"
 			}
 			Separator {
 				Focused = "Image tab.png"
@@ -38,7 +38,7 @@ PDecor {
 			Right {
 				Focused = "Image close-focus.png"
 				Unfocused = "Image close-focus.png"
-				Pressed = "Image btn-cf.png"
+				Pressed = "Image close-focus.png"
 				Button = "1" { Actions = "Close" }
 				Button = "3" { Actions = "Kill" }
 			}
@@ -60,22 +60,22 @@ PDecor {
 			Border {
 				Focused {
 					TopLeft = "Image top-left.png"
-					Top = "Image mid-n.png"
+					Top = "Image mid.png"
 					TopRight = "Image top-right.png"
-					Left =  "Image left-border-orig.png#scaled"
-					Right = "Image right-border-orig.png#scaled"
+					Left =  "Image left-border.png"
+					Right = "Image right-border.png"
 					BottomLeft = "Image bottom-left.png"
-					Bottom = "Image bottom-border-n.png"
+					Bottom = "Image bottom-border.png"
 					BottomRight = "Image bottom-right.png"
 				}
 				Unfocused {
 					TopLeft = "Image top-left.png"
-					Top = "Image mid-n.png"
+					Top = "Image mid.png"
 					TopRight = "Image top-right.png"
-					Left =  "Image left-border-orig.png#scaled"
-					Right = "Image right-border-orig.png#scaled"
+					Left =  "Image left-border.png"
+					Right = "Image right-border.png"
 					BottomLeft = "Image bottom-left.png"
-					Bottom = "Image bottom-border-n.png"
+					Bottom = "Image bottom-border.png"
 					BottomRight = "Image bottom-right.png"
 				}
 			}
@@ -115,20 +115,20 @@ PDecor {
 				Focused {
 					TopLeft = "Image top-left-menu.png"
 					Top = "Image top-menu.png"
-					TopRight = "Image top-right-menu.png"
-					Left =  "Image left-menu.png"
-					Right = "Image right-menu.png"
-					BottomLeft = "Image bottom-left-menu.png"
+					TopRight = "Image top-menu.png"
+					Left =  "Image border.png"
+					Right = "Image border.png"
+					BottomLeft = "Image bottom-menu.png"
 					Bottom = "Image bottom-menu.png"
 					BottomRight = "Image bottom-right-menu.png"
 				}
 				Unfocused {
 					TopLeft = "Image top-left-menu.png"
 					Top = "Image top-menu.png"
-					TopRight = "Image top-right-menu.png"
-					Left =  "Image left-menu.png"
-					Right = "Image right-menu.png"
-					BottomLeft = "Image bottom-left-menu.png"
+					TopRight = "Image top-menu.png"
+					Left =  "Image border.png"
+					Right = "Image border.png"
+					BottomLeft = "Image bottom-menu.png"
 					Bottom = "Image bottom-menu.png"
 					BottomRight = "Image bottom-right-menu.png"
 				}
@@ -242,42 +242,97 @@ PDecor {
 }
 
 
+Define = "BaseDecor" {
+  Height = "20"
+
+  # Increase first number to bring title text downwards
+  Pad = "2 5 5 0"
+
+  Focused = "Image title.png"
+  Unfocused = "Image title_unfocus.png"
+
+  Tab {
+    Focused = "Image title.png"
+    FocusedSelected = "Image title.png"
+    Unfocused = "Image title_unfocus.png"
+    UnfocusedSelected = "Image title_unfocus.png"
+  }
+  Separator {
+    Focused = "Image tab-separator.png"
+    Unfocused = "Image tab-separator_unfocus.png"
+  }
+  Font {
+    Focused = "$FONT_TITLE"
+  }
+  FontColor {
+    Focused = "#ffc571"
+    FocusedSelected = "white"
+    Unfocused = "#777777"
+    UnfocusedSelected = "#777777"
+  }
+  Border {
+    Focused {
+      TopLeft = "Image top-left.png"
+      Top = "Image top-border.png"
+      TopRight = "Image top-right.png"
+      Left =  "Image left-border.png"
+      Right = "Image right-border.png"
+      BottomLeft = "Image bottom-left.png"
+      Bottom = "Image bottom-border.png"
+      BottomRight = "Image bottom-right.png"
+    }
+    Unfocused {
+      TopLeft = "Image top-left_unfocus.png"
+      Top = "Image top-border_unfocus.png"
+      TopRight = "Image top-right_unfocus.png"
+      Left =  "Image left-border_unfocus.png"
+      Right = "Image right-border_unfocus.png"
+      BottomLeft = "Image bottom-left_unfocus.png"
+      Bottom = "Image bottom-border_unfocus.png"
+      BottomRight = "Image bottom-right_unfocus.png"
+    }
+  }
+}
+
+Decor = "Menu" {
+    Title {
+      @BaseDecor
+    }
+  }
+
 Harbour {
         Texture = "Solid #121212"
 	}
 
 
 Menu {
-        Pad = "1 2 7 7" 
+        Pad = "2 1 7 7" 
 
 	Focused {
     		Font = "$font"
-		Background = "Solid #292929"
-		#Background = "Solid #431f0c"
-    		Item = "arrow-focus"
-		Text = "#cccccc" 
-		Separator = "Image menuline.png"
-                Arrow = "arrow-focus"
+		Background = "Solid #f9f9f9"
+		#Background = "Solid #121212"
+    		Item = "Empty"
+		Text = "#909090" 
+		Separator = "Image menuline.png#Scaled"
+                Arrow = "Empty"
   	}
   	Unfocused {
     		Font = "$font"
-                Background = "Solid #292929"
-                #Background = "Solid #572F1A"
-    		Item = "arrow-focus"
-		#Text = "#909090"
-		Text = "#cccccc"
-		Separator = "Image menuline.png"
-                Arrow = "arrow-focus"
+                Background = "Solid #121212"
+    		Item = "Empty"
+		Text = "#909090"
+		Separator = "Image menuline.png#Scaled"
+                Arrow = "Empty"
   	}
   	Selected {
     		Font = "$font"
-    		Background = "Solid #121212"
-		Item = "arrow-sel"
+    		Background = "Solid #303030"
+		Item = "Empty"
     		Text = "#ffffff"
-                Arrow = "arrow-sel"
+                Arrow = "Empty"
   	}
 }
-
 CmdDialog {
  	Font = "$font"
 	Texture = "Solid #ffffff"

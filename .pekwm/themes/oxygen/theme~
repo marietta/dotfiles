@@ -3,22 +3,22 @@
 #  Date: 06.05.08
 
 $font = "XFT#Sans:size=9#Left"
-$font_title = "XFT#Sans:size=8#Center"
+$font_title = "XFT#Sans:size=9#Center"
 
 PDecor {
 	Decor = "Default" {
 		Title {
-			Height = "22"
+			Height = "23"
 			Pad = "5 5 5 5"
 
 			Focused = "Image title.png"
 			Unfocused = "Image title.png"
 
 			Tab {
-				Focused = "Image title.png#scaled"
-				FocusedSelected = "Image title.png#scaled"
-				Unfocused = "Image title.png#scaled"
-				UnfocusedSelected = "Image title.png#scaled"
+				Focused = "Image title.png"
+				FocusedSelected = "Image title.png"
+				Unfocused = "Image title.png"
+				UnfocusedSelected = "Image title.png"
 			}
 			Separator {
 				Focused = "Image tab.png"
@@ -36,46 +36,46 @@ PDecor {
 			}
 	               Buttons {
 			Right {
-				Focused = "Image close-focus.png"
-				Unfocused = "Image close-focus.png"
+				Focused = "Image btn-cl.png"
+				Unfocused = "Image btn-cl.png"
 				Pressed = "Image btn-cf.png"
 				Button = "1" { Actions = "Close" }
 				Button = "3" { Actions = "Kill" }
 			}
 
 			Right {
-				Focused = "Image max-press.png"
-				Unfocused = "Image max-press.png"
-				Pressed = "Image max-press.png"
+				Focused = "Image btn-max.png"
+				Unfocused = "Image btn-max.png"
+				Pressed = "Image btn-max.png"
 				Button = "1" { Actions = "Toggle Maximized 1 1" }
 			}
 
 			Right {
-				Focused = "Image min-press.png"
-				Unfocused = "Image min-press.png"
-				Pressed = "Image min-press.png"
+				Focused = "Image btn-min.png"
+				Unfocused = "Image btn-min.png"
+				Pressed = "Image btn-min.png"
 				Button = "1" { Actions = "Set Iconified" }
 			}
 		}
 			Border {
 				Focused {
-					TopLeft = "Image top-left.png"
-					Top = "Image mid-n.png"
-					TopRight = "Image top-right.png"
-					Left =  "Image left-border-orig.png#scaled"
-					Right = "Image right-border-orig.png#scaled"
+					TopLeft = "Image bd-tl-fo.png"
+					Top = "Image mid.png"
+					TopRight = "Image bd-tr-fo.png"
+					Left =  "Image left-border.png"
+					Right = "Image right-border.png"
 					BottomLeft = "Image bottom-left.png"
-					Bottom = "Image bottom-border-n.png"
+					Bottom = "Image bottom-border.png"
 					BottomRight = "Image bottom-right.png"
 				}
 				Unfocused {
-					TopLeft = "Image top-left.png"
-					Top = "Image mid-n.png"
-					TopRight = "Image top-right.png"
-					Left =  "Image left-border-orig.png#scaled"
-					Right = "Image right-border-orig.png#scaled"
+					TopLeft = "Image bd-tl-fo.png"
+					Top = "Image mid.png"
+					TopRight = "Image bd-tr-fo.png"
+					Left =  "Image left-border.png"
+					Right = "Image right-border.png"
 					BottomLeft = "Image bottom-left.png"
-					Bottom = "Image bottom-border-n.png"
+					Bottom = "Image bottom-border.png"
 					BottomRight = "Image bottom-right.png"
 				}
 			}
@@ -261,8 +261,8 @@ Menu {
   	}
   	Unfocused {
     		Font = "$font"
-                Background = "Solid #292929"
-                #Background = "Solid #572F1A"
+                #Background = "Solid #292929"
+                Background = "Solid #572F1A"
     		Item = "arrow-focus"
 		#Text = "#909090"
 		Text = "#cccccc"
