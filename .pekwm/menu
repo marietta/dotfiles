@@ -4,9 +4,10 @@
 $TERM = "xterm -fn fixed +sb -bg black -fg white"
 
 RootMenu = "Pekwm" {
-  Entry = "Konsole" { Actions = "Exec konsole &" }
+	Entry = "Konsole" { Actions = "Exec konsole &" }
 	Entry = "Firefox" { Actions = "Exec firefox-bin &" }
-	Entry = "Run.." { Actions = "Exec gmrun" }
+#	Entry = "Run.." { Actions = "Exec gmrun" }
+	Entry = "Run.." { Actions = "ShowCmdDialog" }
 
 	Separator {}
 
@@ -33,6 +34,7 @@ RootMenu = "Pekwm" {
 		Entry = "display" { Actions = "Exec display &" }
 		Entry = "gcolor2" { Actions = "Exec gcolor2 &" }
 		Entry = "Gimp" { Actions = "Exec gimp &" }
+		Entry = "Krita" { Actions = "Exec krita &" }
 		Entry = "nitrogen" { Actions = "Exec nitrogen &" }
 	}
 	Submenu = "Multimedia" {
@@ -49,10 +51,12 @@ RootMenu = "Pekwm" {
 	}
 	Submenu = "Network" {
 		Entry = "Firefox" { Actions = "Exec firefox &" }
+		Entry = "hexchat" { Actions = "Exec hexchat &" }
 		Entry = "kadu" { Actions = "Exec kadu &" }
 		Entry = "Konqueror" { Actions = "Exec konqueror &" }
 		Entry = "Transmission" { Actions = "Exec transmission-qt &" }
 		Entry = "wicd-client" { Actions = "Exec wicd-client &" }
+		Entry = "Azureus" { Actions = "Exec azureus &" }
 	}
 	Submenu = "Office" {
 		Entry = "LibreOffice" { Actions = "Exec lofromtemplate &" }
@@ -75,7 +79,7 @@ RootMenu = "Pekwm" {
 		}
 		Entry = "gtk-chtheme" { Actions = "Exec gtk-chtheme &" }
 		Entry = "Gnome settings" { Actions = "Exec gnome-control-center &" }
-		Entry = "KDE settings" { Actions = "Exec systemsettings &" }
+		Entry = "KDE settings" { Actions = "Exec systemsettings5 &" }
 		Entry = "LXappearance" { Actions = "Exec lxappearance &" }
 	}
 

@@ -4,7 +4,7 @@ Files {
     Menu = "~/.pekwm/menu"
     Start = "~/.pekwm/start"
     AutoProps = "~/.pekwm/autoproperties"
-    Theme = "~/.pekwm/themes/Zukitwo_Dark_PekWM"
+    Theme = "~/.pekwm/themes/oxygen-m"
     Icons = "~/.pekwm/icons/"
 }
 
@@ -59,11 +59,11 @@ Screen {
 }
 
 Menu {
-    FocusOpacity = "65"
-  UnfocusOpacity = "65"
+    FocusOpacity = "85"
+	UnfocusOpacity = "85"
     DisplayIcons = "True"
 
-    Icons = "DEFAULT" {
+    Icons = "Faenza" {
         Minimum = "16x16"
         Maximum = "16x16"
     }

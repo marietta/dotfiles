@@ -17,21 +17,37 @@
 # because when I was doing fluxbox's docs, people used to complain that there
 # wasn't one, and I wanted to avoid that for pekwm. ;) --eyez
 
+
 nitrogen --restore #wallpaper
 tint2 &  #panel
-wicd-client -t &
 conky -d -c ~/.conky/conkyrc &
 conky -d -c ~/.conky/accuw-conkyrc &
+/usr/libexec/polkit-gnome-authentication-agent-1 &
+#kdeinit4 &
 /usr/lib/notify-osd/notify-osd &
 gpomme &
 
 sleep 1
-compton  -t-5 -l-5 -r5 -o.85 -m.8 -e.7 &
-#xcompmgr -c -C -t-5 -l-5 -r5 -o.9 &
+# the original
+#compton  -t-5 -l-5 -r5 -o1 -m.8 -e.7 -cCz -b
+#this one casts white shadow
+#compton  -t-3 -l-3 --shadow-radius 3 --shadow-opacity 1 --menu-opacity .8 --frame-opacity .7 --shadow-red .9 --shadow-green .9 --shadow-blue .9 -cCz -b 
+#white shadow all around :o
+compton  -t-5 -l-5 --shadow-radius 4 --shadow-opacity .85 --menu-opacity .85 --frame-opacity .7 --shadow-red .9 --shadow-green .9 --shadow-blue .9 -Ccz -b
+
+wicd-client -t &
 
 dolphin &
 
-sleep 10
-qdbus org.kde.kded /kded loadModule keyboard &
+xbindkeys &
 #bluedevil-monolithic &
+#irexec --daemon &
 
+#qdbus org.kde.kded /kded loadModule keyboard &
+qdbus org.kde.kded5 /kded loadModule keyboard
+
+#konsole --name dterm --hide-tabbar --hide-menubar --profile DesktopShell --geometry 640x280+30+480 --nofork -e ncmpcpp &
+
+/home/marietta/scripts/wacom.sh
+
+easystroke &
