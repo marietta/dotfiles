@@ -4,7 +4,7 @@ killall pulseaudio
 killall jackd
 
 echo -ne "pcm.!default {
-  type plug
+	type plug
 	slave { pcm \"rawjack\" }
 }
 
@@ -28,4 +28,4 @@ pcm.jack {
 	}
 }" > /home/marietta/.asoundrc
 
-jackd -R -d firewire -r 44100 &
+jackd -R -d firewire -r 44100  &
